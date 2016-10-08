@@ -93,7 +93,6 @@ namespace StatePrinting.OutputFormatters
             int trim = new StringBuilderTrimmer(configuration.LegacyBehaviour.TrimTrailingNewlines).TrimLast(sb);
             if(trim > 0)
                 sb.Remove(sb.Length - trim, trim);
-        
         }
     }
 }
