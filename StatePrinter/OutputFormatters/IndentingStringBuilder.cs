@@ -66,6 +66,23 @@ namespace StatePrinting.OutputFormatters
             mustIndent = true;
         }
 
+        public void Append(string text)
+        {
+            if (mustIndent)
+            {
+                sb.Append(indent);
+                mustIndent = false;
+            }
+            sb.Append(text);
+        }
+
+        public void AppendLine(string text)
+        {
+            Append(text);
+            sb.Append(NewLineDefinition);
+            mustIndent = true;
+        }
+
         public override string ToString()
         {
             return sb.ToString();
